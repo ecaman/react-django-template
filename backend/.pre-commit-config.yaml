@@ -1,0 +1,17 @@
+repos:
+  - repo: local
+    hooks:
+      - id: black
+        name: black
+        description: "Run black on your code to format it"
+        entry: backend/.venv/bin/black
+        language: python
+        language_version: python3
+        require_serial: true
+        types: [python]
+
+      - id: pylint
+        name: pylint
+        entry: backend/.venv/bin/pylint --rcfile=backend/.pylintrc
+        language: system
+        types: [python]
